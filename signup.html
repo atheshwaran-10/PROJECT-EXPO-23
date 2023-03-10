@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login/Signup Page</title>
+    <link rel="stylesheet" href="style.css">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+  </head>
+  <body>
+    <h1 class="head">Login/Signup Page</h1>
+    <form id="login-form">
+      <h2>Login</h2>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" required ><br><br>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required ><br><br>
+      <button type="submit" class="login" id="login">Login</button>
+      <button type="button" class="bsignup" id="bsignup">New User? Sign Up</button>
+    </form>
+   
+    <form id="signup-form" style="display: none;">
+      <h2>Signup</h2>
+      <label for="new-username">Username:</label>
+      <input type="text" id="new-username" name="new-username" required ><br><br>
+      <label for="email">Email:</label>
+		  <input type="email" id="new-mail" name="email" required >
+      <label for="new-password">Password:</label>
+      <input type="password" id="new-password" name="new-password" required><br><br>
+      <button type="submit" class="signup-1" id="signup">Signup</button>
+      <button type="button" class="blogin" id="blogin">Existing User?Log in</button>
+    </form>
+   
+  </body>
+  <script>
+  const users = {
+  "zero": {
+    "password": "1234",
+    "email": "psna@gmail.com"
+  },
+};
+
+const loginForm = document.getElementById("login-form");
+const signupForm = document.getElementById("signup-form");
+const messageDiv = document.getElementById("message");
+const loginButton = document.getElementById("login");
+const signupButton = document.getElementById("signup");
+const loginButton1 = document.getElementById("blogin");
+const signupButton1 = document.getElementById("bsignup");
+
+function userExists(username) {
+  return users.hasOwnProperty(username);
+}
+
+function showLoginForm() {
+  loginForm.style.display = "block";
+  signupForm.style.display = "none";
+}
+
+function showSignupForm() {
+  loginForm.style.display = "none";
+  signupForm.style.display = "block";
+  signupForm.style.height = "470px";
+  signupForm.style.position = "absolute";
+  signupForm.style.top = "120px";
+}
+
+loginForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  if (username === "" || password === "") {
+    alert("Please enter a valid username and password.");
+  } else if (userExists(username) && users[username]["password"] === password) {
+    alert(`Welcome ${username}!`);
+  } else {
+    alert("Invalid username or password. Please try again or sign up.");
+    showSignupForm();
+  }
+});
+
+signupForm.addEventListener("submit", function(event) {
+  event.preventDefault();
+  const newUsername = document.getElementById("new-username").value;
+  const newPassword = document.getElementById("new-password").value;
+  const email = document.getElementById("new-mail").value;
+  if (newUsername === "" || newPassword === "" || email === "") {
+    alert("Please enter a valid username, password, and email.");
+  } else if (userExists(newUsername)) {
+    alert("This username already exists. Please choose a different username.");
+  } else {
+    alert("User created successfully. Please log in.");
+    showLoginForm();
+    users[newUsername] = {
+      "password": newPassword,
+      "email": email
+    };
+  }
+});
+
+signupButton1.addEventListener("click", function(event) {
+  showSignupForm();
+});
+
+loginButton1.addEventListener("click", function(event) {
+  showLoginForm();
+});
+
+showLoginForm();
+
+  </script>
+</html>

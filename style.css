@@ -1,0 +1,179 @@
+body 
+    {
+      background-color: rgb(255, 0, 38);
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+		}
+    .title
+    {
+      color:#ffff;
+      text-align: center;
+      position: absolute;
+      left:46%;
+      top:130px;
+      font-size: 2rem;
+      display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+    }
+		form 
+    {
+      position: absolute;
+      top:25%;
+      left:40%;
+			background-color: #f2f2f2;
+			border-radius: 5px;
+			box-shadow:0px 0px 20px #ccc;
+			margin: 20px auto;
+			padding: 20px;
+			max-width: 300px;
+      height: 350px;
+		}
+		
+		form label 
+    {
+			display: block;
+			font-weight: bold;
+			margin-bottom: 10px;
+		}
+		
+		form input[type="text"],
+		form input[type="email"],
+		form input[type="password"]
+     {
+			border-radius: 30px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			display: block;
+			font-size: 16px;
+			margin-bottom: 20px;
+			padding: 10px;
+			width: 100%;
+		}
+		.head
+		{
+			margin-top: 60px;
+			text-align: center;
+		}
+    .signup
+     {
+			background-color: rgb(255, 0, 38);
+			border: none; 
+			border-radius: 3px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+      margin-left: 15px;
+			width: 70%;
+      position:absolute;
+		}
+		.bsignup
+     {
+			background-color: rgb(255, 0, 38);
+			border: none; 
+			border-radius: 3px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+      margin-left: 15px;
+			width: 70%;
+      position:absolute;
+			bottom:5px;
+		}
+		.bsignup:hover
+    {
+			background-color: #d80230;
+      color: #fff;
+      border: 0px;
+    }
+		.signup-1
+     {
+			background-color: rgb(255, 0, 38);
+			border: none; 
+			border-radius: 3px;
+			color: #fff;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+      margin-left: 15px;
+			margin-bottom: 10px;
+			
+			width: 70%;
+      position:absolute;
+			bottom:73px;
+		}
+		.signup-1:hover
+    {
+      background-color: #d80230;
+      color: #fff;
+      border: 0px;
+    }
+    .login
+    {
+			background-color: rgb(255, 255, 255);;
+			border: 1px solid;
+			border-radius: 3px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+      margin-left: 25px;
+			width: 60%;
+      position:absolute;
+      margin-top: -50px;
+		}
+		.login:hover
+    {
+      background-color: #bcbcbc;
+      color: black;
+      border: 0px;
+    }
+		.blogin
+    {
+			background-color: rgb(255, 255, 255);;
+			border: 1px solid;
+			border-radius: 3px;
+			color: black;
+			cursor: pointer;
+			font-size: 16px;
+			padding: 10px;
+      margin-left: 25px;
+			width: 60%;
+      position:absolute;
+      margin-top: 0px;
+		}
+		.blogin:hover
+    {
+      background-color: #bcbcbc;
+      color: black;
+      border: 0px;
+    }
+    .signup:hover
+    {
+      background-color: #d80230;
+     
+      border: 1px solid;
+    }
+		@media only screen and (max-width: 600px)
+		 {
+			.title
+			 {
+				left: 50%;
+				transform: translateX(-50%);
+				font-size: 1.5rem;
+			}
+			form 
+			{
+				left: 50%;
+				transform: translateX(-50%);
+				top: 20%;
+				height: 370px;
+				max-width: 80%;
+				padding: 10px;
+			}
+		}
+		
+		
